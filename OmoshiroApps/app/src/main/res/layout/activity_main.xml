@@ -1,0 +1,83 @@
+<!-- ユーザー登録・ログインのレイアウトです。KiiCloudのチュートリアルから持ってきました。 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/gradation"
+    android:orientation="vertical"
+    tools:context=".UserActivity">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="5dip"
+        android:paddingLeft="25dip"
+        android:paddingRight="25dip"
+        android:paddingTop="40dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="2dip"
+            android:text="タイトル"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/username_layout_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/title_field"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dip"
+                android:gravity="left|center_vertical"
+                android:hint="タイトルを入力"
+                android:inputType="textShortMessage"
+                android:minWidth="250dip"
+                android:paddingBottom="10dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="2dip"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp"></EditText>
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/password_layout_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--<EditText-->
+                <!--android:id="@+id/password_field"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="16dip"-->
+                <!--android:gravity="left|center_vertical"-->
+                <!--android:hint="@string/enter_password"-->
+                <!--android:inputType="textPassword"-->
+                <!--android:minWidth="250dip"-->
+                <!--android:paddingBottom="10dip"-->
+                <!--android:paddingLeft="10dip"-->
+                <!--android:paddingRight="2dip"-->
+                <!--android:paddingTop="2dip"-->
+                <!--android:scrollHorizontally="true"-->
+                <!--android:singleLine="true"-->
+                <!--android:textSize="16dp" />-->
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
