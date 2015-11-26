@@ -16,8 +16,8 @@
 <!-- グラデーション -->
 <gradient
  android:angle="270"
- android:startColor="@color/white"
- android:endColor="#9daee0"
+ android:startColor="#00bfff"
+ android:endColor="#87ceeb"
  android:type="linear"
  android:centerX="0.5"
  android:centerY="0.5"
@@ -39,11 +39,9 @@
 />
  
 <!-- 枠線 -->
-<stroke
- android:width="3dp"
- android:color="#5a7be0"
- android:dashWidth="5dp"
- android:dashGap="5dp"
-/>
+<!--<stroke-->
+ <!--android:width="3dp"-->
+ <!--android:color="@color/colorPrimaryDark"-->
+<!--/>-->
 
 </shape>
