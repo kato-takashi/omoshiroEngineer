@@ -1,16 +1,48 @@
 package com.lucky_ponies.katotakashi.omoshiroapps;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private String TAG = MainActivity.class.getName();
+    private TextView titleText;
+    private TextView writeText;
+    private Spinner bookKind;
+    private ImageButton photoBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        titleText = (TextView) findViewById(R.id.title_field);
+        writeText = (TextView) findViewById(R.id.write_field);
+        bookKind = (Spinner) findViewById(R.id.book_kind);
+        photoBtn = (ImageButton)findViewById(R.id.photo_btn);
+
+        photoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String message = "タイトル:" + titleText.getText().toString() +
+                        "\n種類："+ bookKind.getSelectedItem().toString()+
+                "\n本文："+ writeText.getText().toString();
+                Log.d(TAG, message);
+                Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
