@@ -3,4 +3,10 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string-array name="list">
+    <item>A型</item>
+    <item>B型</item>
+    <item>O型</item>
+    <item>AB型</item>
+</string-array>
 </resources>

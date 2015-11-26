@@ -7,77 +7,136 @@
     android:orientation="vertical"
     tools:context=".UserActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:paddingBottom="5dip"
-        android:paddingLeft="25dip"
-        android:paddingRight="25dip"
-        android:paddingTop="40dip">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="40dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dip"
-            android:paddingLeft="10dip"
-            android:paddingRight="10dip"
-            android:paddingTop="2dip"
-            android:text="タイトル"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold" />
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/username_layout_field"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/title_field"
-                android:layout_width="fill_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dip"
-                android:gravity="left|center_vertical"
-                android:hint="タイトルを入力"
-                android:inputType="textShortMessage"
-                android:minWidth="250dip"
-                android:paddingBottom="10dip"
-                android:paddingLeft="10dip"
-                android:paddingRight="10dip"
-                android:paddingTop="2dip"
-                android:scrollHorizontally="true"
-                android:singleLine="true"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:text="タイトル"
                 android:textColor="@color/colorPrimary"
-                android:textSize="16dp"></EditText>
-        </android.support.design.widget.TextInputLayout>
+                android:textStyle="bold" />
 
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/username_layout_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <EditText
+                    android:id="@+id/title_field"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="left|center_vertical"
+                    android:hint="タイトルを入力"
+                    android:inputType="textShortMessage"
+                    android:minWidth="250dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="2dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16dp"></EditText>
+            </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/password_layout_field"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:text="ジャンル"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
 
-            <!--<EditText-->
-                <!--android:id="@+id/password_field"-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginBottom="16dip"-->
-                <!--android:gravity="left|center_vertical"-->
-                <!--android:hint="@string/enter_password"-->
-                <!--android:inputType="textPassword"-->
-                <!--android:minWidth="250dip"-->
-                <!--android:paddingBottom="10dip"-->
-                <!--android:paddingLeft="10dip"-->
-                <!--android:paddingRight="2dip"-->
-                <!--android:paddingTop="2dip"-->
-                <!--android:scrollHorizontally="true"-->
-                <!--android:singleLine="true"-->
-                <!--android:textSize="16dp" />-->
-        </android.support.design.widget.TextInputLayout>
+            <Spinner
+                android:id="@+id/book_kind"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="10dp"
+                android:entries="@array/list"
+                android:hint="ジャンルを選択"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:textColor="@color/colorPrimary" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:text="本文"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/write_layout_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/write_field"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="top"
+                    android:hint="本文を入力"
+                    android:inputType="textMultiLine"
+                    android:minWidth="250dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="2dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16dp"
+                    android:maxLength="300"></EditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/photo_shape">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+
+                    android:background="@null"
+                    android:src="@drawable/edit_camera" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>
