@@ -1,21 +1,22 @@
-package com.luky_ponies.omoshiro2;
+package com.lucky_ponies.katotakashi.omoshiro4;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
-import java.io.File;
-
 public class MainActivity extends AppCompatActivity {
+    private String btn1String = "kumamoto";
+    private String btn2String = "kayac";
+    private  String url1 = "http://www.city.kumamoto.jp/";
+    private  String url2 = "http://www.kayac.com/";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,31 +34,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btn1 = (Button) findViewById(R.id.button1);
-        Button btn2 = (Button) findViewById(R.id.button2);
+        Button btn1 = (Button) findViewById(R.id.btn1);
+        Button btn2 = (Button) findViewById(R.id.btn2);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
+        setWebView(btn1, btn1String, url1);
+        setWebView(btn2, btn2String, url2);
+    }
+
+    //webViewへセット
+    private void setWebView(Button btn, final String text, final  String url){
+        btn.setText(text);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //みんなが使えるファイルの置き場を確保
-                File storageDir = getExternalFilesDir(null);
-                //そこに一つファイルをおく
-                File imageFile = new File(storageDir, "photo.jpg");
-                Intent intent = new Intent(MainActivity.this, ScrollingActivity.class);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imageFile));
-                intent.putExtra("company1", "kayac");
+                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+                intent.putExtra("COMPANY", text);
+                intent.putExtra("URL", url);
                 startActivity(intent);
-
-            }
-        });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ScrollingActivity.class);
-                intent.putExtra("company2", "NASA");
-                startActivity(intent);
-
             }
         });
     }
